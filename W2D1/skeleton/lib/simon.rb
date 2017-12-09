@@ -10,34 +10,34 @@ class Simon
 
   def initialize
     @seq = []
-    @seq.empty? ? @sequence_length = 1 : @sequence_length = @seq.length
+    @sequence_length = 1
     @game_over = false
   end
 
   def play
     while !game_over
-      
-      
+      input_seq = take_turn
+      if @seq.map{|c| c[0].upcase}.join == input_seq
+        take_turn
+      else
+        game_over = true
+      end
     end
     game_over_message
     reset_game
   end
 
   def take_turn
-    add_random_color
     show_sequence
+    # debugger
+    round_success_message
+    @sequence_length += 1
     input_seq = require_sequence
-    if @seq.map{|c| c[0].upcase}.join == input_seq
-      round_success_message
-      sleep(1)
-      system('clear')
-    else
-      @game_over = true
-    end
   end
 
   def show_sequence
     sleep(1)
+    add_random_color
     @seq.each do |c|
       p "#{c.capitalize}"
       # .colorize(:color => c.to_sym)
@@ -53,6 +53,7 @@ class Simon
 
   def add_random_color
     @seq << Simon::COLORS.sample
+    @sequence_length = @seq.length
   end
 
   def round_success_message
@@ -64,7 +65,10 @@ class Simon
   end
 
   def reset_game
-    @seq = []
+    initialize
+    # @seq = []
+    # @sequence_length = 1
+    # @game_over = false
     # puts 'y/n to replay the game'
     # input = gets.chomp.downcase
     # if input == 'y'
