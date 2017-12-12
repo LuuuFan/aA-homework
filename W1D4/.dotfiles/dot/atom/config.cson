@@ -1,0 +1,31 @@
+"*":
+  core:
+    audioBeep: false
+    telemetryConsent: "no"
+  editor:
+    fontSize: 14
+    invisibles: {}
+    preferredLineLength: 72
+    showIndentGuide: true
+    showInvisibles: true
+  linter:
+    errorPanelHeight: 180
+    ignoreVCSIgnoredFiles: false
+    lintOnFly: false
+    showErrorPanel: false
+    showErrorTabLine: true
+    showErrorTabProject: false
+    statusIconScope: "File"
+  "linter-eslint":
+    disableWhenNoEslintConfig: false
+    globalNodePath: "<%= `npm get prefix`.chomp %>"
+    useGlobalEslint: true
+  "linter-rubocop":
+    executablePath: "<%= `which rubocop`.chomp %>"
+  "markdown-preview":
+    liveUpdate: false
+  welcome:
+    showOnStartup: false
+".text":
+  editor:
+    softWrap: true

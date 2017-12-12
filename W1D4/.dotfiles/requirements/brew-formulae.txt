@@ -1,0 +1,5 @@
+git
+heroku
+qt5
+rbenv
+ruby-build

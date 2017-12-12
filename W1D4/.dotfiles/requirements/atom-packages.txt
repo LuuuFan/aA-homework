@@ -1,0 +1,5 @@
+linter
+linter-eslint
+linter-rubocop
+react
+rspec
