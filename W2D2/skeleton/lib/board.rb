@@ -33,7 +33,7 @@ class Board
     moves = cups[start_pos].count
     cups[start_pos].clear
     # debugger
-    i = next_turn(start_pos)
+    i = start_pos + 1
     until moves == 0
       if i == 13 && current_player_name == @name1
         i = 0
@@ -49,30 +49,28 @@ class Board
     end
         # system('clear')
     render
+    next_turn(i - 1)
+
     # debugger
-    if current_player_name == @name1 && i - 1 == 6
-      :prompt
-    elsif current_player_name == @name2 && i - 1 == -1
-      :prompt
-    elsif cups[i - 1].count == 1
-      :switch
-    else
-      i - 1
-    end
+    # if current_player_name == @name1 && i - 1 == 6
+    #   :prompt
+    # elsif current_player_name == @name2 && i - 1 == -1
+    #   :prompt
+    # elsif cups[i - 1].count == 1
+    #   :switch
+    # else
+    #   i - 1
+    # end
   end
 
   def next_turn(ending_cup_idx)
-    result = -1
-    if ending_cup_idx < 13
-      puts ending_cup_idx
-      puts ending_cup_idx + 1
-      result = ending_cup_idx + 1
-    elsif ending_cup_idx == 13
-      result = 0
+    if ending_cup_idx == 6 || ending_cup_idx == 13
+      :prompt
+    elsif cups[ending_cup_idx].count == 1
+      :switch
     else
-      puts "why ending_cup_idx goes over 13?!"
+    ending_cup_idx
     end
-    result
   end
 
   def render
