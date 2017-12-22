@@ -27,5 +27,12 @@ class Artist < ApplicationRecord
     end
 
     album_counts
+    # h = Hash.new
+    # self.albums
+    #   .select('albums.title, COUNT(*) AS tracks_count')
+    #   .joins(:tracks)
+    #   .group('albums.id')
+    #   .each { |album| h[album.title] = tracks_count }
+    # h
   end
 end
