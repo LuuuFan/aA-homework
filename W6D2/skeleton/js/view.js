@@ -39,7 +39,9 @@ View.prototype.exercise3 = function () {
   //Result: An <h1> with the text 'i love jquery' appears under the grid.
 
   //your code here!
-  
+  let h1 = document.createElement('h1');
+  h1.innerHTML = 'i love jquery';
+  $('#easel').append(h1);
 };
 
 View.prototype.exercise4 = function () {
@@ -47,6 +49,9 @@ View.prototype.exercise4 = function () {
   //Result: Your name appears in every other square.
 
   //your code here!
+  let p = document.createElement('p');
+  p.innerHTML = 'lu';
+  $('li').append(p);
 };
 
 View.prototype.exercise5 = function () {
@@ -58,6 +63,14 @@ View.prototype.exercise5 = function () {
   //  'data-pos' of every square
 
   //your code here!
+  $('li').on("click", function(event){
+    // var li = $(event.currentTarget);
+    // debugger
+    // var pos = $(event.currentTarget).getAttribute('data-pos');
+    // var pos = li.context.getAttribute('data-pos');
+    alert(event.currentTarget.getAttribute('data-pos'));
+    // alert(pos);
+  });
 };
 
 View.prototype.exercise6 = function () {
@@ -68,6 +81,12 @@ View.prototype.exercise6 = function () {
   //hint: use window._randomColorString() (defined at top) to get a random color!
 
   //your code here!
+  let lis = $('li');
+  // debugger
+  for (var i = 0; i < lis.length; i++) {
+    $(lis[i]).css('background', window._randomColorString());
+  }
+  // $('li').css('background', window._randomColorString())
 };
 
 View.prototype.exercise7 = function(){
@@ -78,6 +97,9 @@ View.prototype.exercise7 = function(){
   //rainbow.
 
   //your code here!
+  $('li').on('mouseover',(event) => {
+    console.log(event.currentTarget.style['background-color']);
+  });
 };
 
 
