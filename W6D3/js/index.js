@@ -4,8 +4,9 @@ console.log("Hello from the JavaScript console!");
 $.ajax({
   type: 'GET',
   // url: 'http://api.openweathermap.org/data/2.5/weather?q=NY,NY&appid=bcb83c4b54aee8418983c2aff3073b3b',
-  // url: 'http://api.openweathermap.org/data/2.5/weather?q=NY,NY&appid=be182788a8d4e2a8a2a1803c42eea32c',
-  url: 'http://api.openweathermap.org/data/2.5/weather?q=NY,NY&appid=882a1d17c8a1648dc6c2f50b3858e3b2',
+  // url: 'http://api.openweathermap.org/data/2.5/weather?q=SanFrancisco&appid=be182788a8d4e2a8a2a1803c42eea32c',
+  url: 'http://api.openweathermap.org/data/2.5/weather?zip=94115,us&appid=be182788a8d4e2a8a2a1803c42eea32c',
+  // url: 'http://api.openweathermap.org/data/2.5/weather?q=NY,NY&appid=882a1d17c8a1648dc6c2f50b3858e3b2',
   success(data) {
       console.log("We have your weather!");
       console.log(data);
