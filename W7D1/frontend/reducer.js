@@ -1,4 +1,4 @@
-import {selectCurrency} from './actions';
+// import {selectCurrency} from './actions';
 
 const initialState = {
   baseCurrency: "Please select",
