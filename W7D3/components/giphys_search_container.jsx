@@ -10,7 +10,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchSearchGiphys: (searchTerm) => dispatch(fetchSearchGiphys(serachTerm)),
+    fetchSearchGiphys: (searchTerm) => dispatch(fetchSearchGiphys(searchTerm)),
   };
 };
 

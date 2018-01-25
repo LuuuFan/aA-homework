@@ -10,12 +10,13 @@ export const receiveSearchGiphys = giphys => {
   };
 }
 
-export const fetchSearchGiphys = (searchTerm) => ((dispatch) => {
+export const fetchSearchGiphys = (searchTerm) => (dispatch) => {
+  // debugger
   APIUtil.fetchSearchGiphys(searchTerm)
     .then(
       giphys => dispatch(receiveSearchGiphys(giphys.data)),
     );
-});
+};
 
 
 // export const fetchSearchGiphys = (searchTerm) => {
